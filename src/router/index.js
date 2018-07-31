@@ -20,7 +20,7 @@ export default new Router({
             component: About
         },
         {
-            path: '/profiule/:user_id',
+            path: '/profile/:user_id',
             name: 'ViewProfile',
             component: ViewProfile
         }
