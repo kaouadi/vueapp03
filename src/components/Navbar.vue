@@ -16,6 +16,12 @@
                 </router-link>
             </li>
         </ul>
+        <h2>Navigation control</h2>
+        <ul>
+            <li><button @click="goBack">Go back</button></li>
+            <li><button @click="goHome">Redirect to Home</button></li>
+            <li><button @click="goForward">Go forward </button></li>
+        </ul>
     </nav>
 </template>
 
@@ -26,6 +32,17 @@ export default {
         return{
             userIds: ['1', '2', '3', '4']
 
+        }
+    },
+    methods:{
+        goHome(){
+           this.$router.push({name: 'Home'})
+        },
+        goBack(){
+            this.$router.go(-1)
+        },
+        goForward(){
+            this.$router.go(1)
         }
     }
 
@@ -40,6 +57,10 @@ ul{
 }
 a{
     color: #42b983
+}
+li{
+    display: inline-block;
+    margin: 10px;
 }
 
 </style>
